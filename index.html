@@ -2,38 +2,68 @@
 <html>
 
 	<head>
+	    <title> [test]Hello, Folks!</title>
 
-	    <meta charset="utf-8" />
+		<meta charset="utf-8" />
     	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     	<link href="css/foundation.css" rel="stylesheet">
     	<link rel="stylesheet" href="./css/main.css">
+    	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-    	<script src="js/vendor/modernizr.js"></script>
+    	<!-- スライドショーのjavascript -->
+		<script type="text/javascript">
+		function slideSwitch() {
+		   var $active = $('#slideshow img.active');
 
-	    <title> [test]Contact / Hello, Folks!</title>
+		   if ( $active.length == 0 ) $active = $('#slideshow img:last');
+
+		   var $next =  $active.next().length ? $active.next()
+		      : $('#slideshow img:first');
+
+		   $active.addClass('last-active');
+
+		   $next.css({opacity: 0.0})
+		      .addClass('active')
+		      .animate({opacity: 1.0}, 1000, function() {
+		           $active.removeClass('active last-active');
+		      });
+		}
+		$(function() {
+		   setInterval( "slideSwitch()", 3000 );
+		});
+		</script>
 
 	</head>
 
 	<body>
 		<! html-tag,navで書いた方が良い？ >
-			<div class="nav">
-				<div class="container">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Schedule</a></li>
-						<li><a href="#">History</a></li>
-						<li><a href="#">Folks</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div>
+		<div class="nav">
+			<div class="container">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Schedule</a></li>
+					<li><a href="#">History</a></li>
+					<li><a href="#">Folks</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
 			</div>
+		</div>
 
 		<div class="jumbotron">
 			<div class="container">
-					<h1>Hello, Folks!</h1>
-					<p>A SMALL GATHERING FOR GOOD LIFE!</p>
+				<p id="slideshow">
+				   <img src="./img/top01.jpg" alt="画像1" class="active">
+				   <img src="./img/top02.jpg" alt="画像2">
+				   <img src="./img/top03.jpg" alt="画像3">
+				   <img src="./img/top04.jpg" alt="画像4">
+				   <img src="./img/top05.jpg" alt="画像5">
+				</p>
+
+				<h1>Hello, Folks!</h1>
+				<p>A SMALL GATHERING FOR GOOD LIFE!</p>
+
 			</div>
 		</div>
 

@@ -19,6 +19,7 @@
 }
 
 */
+
 /*webからコピー　メニューバー*/
 
 .nav ul{
@@ -54,30 +55,57 @@
 
 /*コピペここまで*/
 
-.jumbotron {
-	background-image: url('../img/top_forest.jpg');
-	height: 450px;
 
+/*スライドショーのためにコピペ*/
+
+<style type="text/css">
+#slideshow {
+   position: relative;
+   width:  640px; /* 画像の横幅に合わせて記述 */
+   height: 270px; /* 画像の高さに合わせて記述 */
 }
+#slideshow img {
+   position: absolute;
+   top: 100px;
+   left: 100px;
+
+   z-index: 8;
+   opacity: 0.0;
+}
+#slideshow img.active {
+   z-index: 10;
+   opacity: 1.0;
+}
+#slideshow img.last-active {
+   z-index: 9;
+}
+</style>
+
+/*コピペここまで*/
+
+
+
 
 .jumbotron .container {
-  position: relative;
-  background-color: gray;
-  top:250px;
+ 	position: absolute;
+ 	top: 550px;
+ 	left: 150px;
+ 	background-color: gray;
 }
 
 .jumbotron h1 {
 	color: white;
 	font-size: 55px;
-	/*topのHello,Folks!もちょい左寄せにしたいのですが
-	padding-leftが効きません*/
 	padding-left: 100px;
 }
 
-.jumbotron p {
-	color: white;
-	font-size: 20px;
-	padding-left: 100px;
+.recentupdates {
+	position: absolute;
+	top: 700px;
+	left: 100px;
+}
+
+
 }
 
 .recentupdates h2 {
