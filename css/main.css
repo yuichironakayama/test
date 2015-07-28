@@ -4,6 +4,7 @@
 
 }
 
+/*
 .nav li {
 	display: inline;
 	float: left;
@@ -11,10 +12,47 @@
 	background-color: gray;
 }
 
+
 .nav a {
 	color: white;
 	font-size: 15px;
 }
+
+*/
+/*webからコピー　メニューバー*/
+
+.nav ul{
+	margin: 0; 
+	padding: 0; 
+	list-style: none;
+}
+
+.nav li{ 
+	display: inline; 
+	padding: 0; 
+	margin: 0; 
+	float: left;
+}
+
+.nav li a{
+	display: block;
+	width: 100px;
+	padding: 3px;
+	margin: 10px 0px 10px 0px;
+	text-decoration: none;
+	border:outset 3px #C2CBBD;
+	background-color: #C2CBBD;
+	text-align: center;
+	color: white;
+	font-size: 14px;
+}
+
+.nav li a:hover{
+	border: inset 3px #95A38D;
+	background-color: #95A38D;
+}
+
+/*コピペここまで*/
 
 .jumbotron {
 	background-image: url('../img/top_forest.jpg');
@@ -42,7 +80,7 @@
 	padding-left: 100px;
 }
 
-.recentupdates h1 {
+.recentupdates h2 {
 	font-size: 15px;
 	padding: 20px;
 }
